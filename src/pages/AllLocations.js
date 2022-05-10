@@ -29,19 +29,21 @@ const AllLocations = () => {
 
     if (isLoading) {
         return (
-            <section style={{marginLeft: "50%", marginTop: "40%"}}>
-                <RingLoader color="#04555c" size={200}/>
+            <section style={{marginLeft: "50%", marginTop: "10%"}}>
+                <RingLoader color="#04555c" size={150}/>
             </section>
         )
     }
 
     return (
-        <div>
-            <section>
-                <h1>All Locations</h1>
-                <LocationList locations={loadedLocations}/>
-            </section>
-        </div>
+        <main className="main">
+            <div>
+                <section>
+                    <h1>All Locations</h1>
+                    <LocationList locations={loadedLocations}/>
+                </section>
+            </div>
+        </main>
     );
 };
 

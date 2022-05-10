@@ -1,0 +1,6 @@
+.main-dash {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /*min-height: 1000px;*/
+}

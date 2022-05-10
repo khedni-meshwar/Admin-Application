@@ -9,10 +9,10 @@ import {
 import Login from "./Login";
 
 import './App.css'
-import MainLayout from "./layout/MainLayout";
 import AllLocations from "./pages/AllLocations";
 import AddLocation from "./pages/AddLocation";
 import Layout from "./layout/Layout";
+import Analytics from "./pages/Analytics";
 
 const App = () => {
     const auth = getAuth(fire);
@@ -69,11 +69,11 @@ const App = () => {
 
 
     return (
-        <div className="App">
+        <>
             {user ? (
                 <Layout>
                     <Routes>
-                        <Route index element={<MainLayout/>}/>
+                        <Route index element={<Analytics/>}/>
                         <Route path="/locations" element={<AllLocations/>}/>
                         <Route path="/add-location" element={<AddLocation/>}/>
                     </Routes>
@@ -89,8 +89,8 @@ const App = () => {
                     passwordError={passwordError}
                 />
             )}
-        </div>
 
+        </>
     );
 };
 

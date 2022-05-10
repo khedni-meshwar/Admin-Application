@@ -1,0 +1,22 @@
+.main-analytics {
+    /*background: linear-gradient(*/
+    /*        106.37deg,*/
+    /*        #04555c 29.63%,*/
+    /*        #08a4b1 51.55%,*/
+    /*        #0acbdb 90.85%*/
+    /*);*/
+    height: 92.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+}
+
+/*.analytics-container {*/
+/*    display: grid;*/
+/*    height: 97%;*/
+/*    width: 97%;*/
+/*    border-radius: 2rem;*/
+/*    background-color: #e1e8e9;*/
+/*    overflow: hidden;*/
+/*}*/
