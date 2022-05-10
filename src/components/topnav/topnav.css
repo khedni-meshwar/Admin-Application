@@ -1,0 +1,31 @@
+nav {
+    background: #04555c;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5rem;
+    padding: 0 10%;
+}
+
+h2 {
+    color: #fff;
+    font-size: 2em;
+}
+
+nav button {
+    border-radius: 20px;
+    font-size: 1.5em;
+    border: none;
+    outline: none;
+    width: 200px;
+    padding: 15px 0;
+    color: #fff;
+    letter-spacing: 1px;
+    background: #04555c;
+    cursor: pointer;
+}
+
+nav button:hover{
+    background-color: #08a4b1;
+}

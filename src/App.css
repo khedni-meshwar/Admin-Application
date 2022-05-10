@@ -1,38 +1,81 @@
-.App {
-  text-align: center;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 15px 0;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 1px;
+    background: #27af9d;
+    cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button:hover{
+    background-color: #08a4b1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.login {
+    min-height: 100vh;
+    height: 65%;
+    width: 70%;
+    background: #fffaee url("./images/travel.jpg") no-repeat ;
+    background-size: cover;
+    display: flex;
 }
 
-.App-link {
-  color: #61dafb;
+.login .loginContainer {
+    padding: 60px;
+    margin: auto auto auto 90%;
+    float: right;
+    min-width: 30%;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #04555c;
+    opacity: 0.9;
+    box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login .loginContainer label {
+    color: white;
+    margin: 14px 0;
+    display: block;
+    font-size: 22px;
+    line-height: 1;
 }
+
+.login .loginContainer input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 19px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.login .loginContainer .btnContainer {
+    width: 100%;
+    padding: 24px 0;
+}
+
+.login .loginContainer .btnContainer p {
+    margin: 14px 0 0 0;
+    text-align: right;
+    color: #fff;
+}
+
+.login .loginContainer .errorMsg {
+    color: red;
+    font-size: 16px;
+}
+

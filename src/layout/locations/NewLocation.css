@@ -1,0 +1,108 @@
+.form {
+    padding: 1rem;
+}
+
+.control {
+    margin-bottom: 0.5rem;
+}
+
+.control label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.control input,
+.control textarea {
+    display: block;
+    font: inherit;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 0.25rem;
+    width: 100%;
+}
+
+.actions {
+    margin-top: 1rem;
+    text-align: right;
+}
+
+.actions button {
+    font: inherit;
+    cursor: pointer;
+    background-color: #04555c;
+    color: white;
+    border: 1px solid #fffaee;
+    border-radius: 15px;
+    font-weight: bold;
+    width: 40%;
+    display: block;
+    align-items: center;
+
+}
+
+.actions button:hover,
+.actions button:active {
+    background-color: #04555c;
+    border-color: #ffffff;
+}
+
+.overlay {
+    background: #04555c;
+    background: -webkit-linear-gradient(to right, #04555c, #0acbdb);
+    background: linear-gradient(to right, #04555c, #0acbdb);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+    color: #ffffff;
+    position: absolute;
+    left: 100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.overlay-panel {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+.location-container{
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 20px rgba(0,0,0,0.25);
+    position: relative;
+    overflow: hidden;
+    min-width: 1000px;
+    max-width: 100%;
+    min-height: 700px;
+
+}
+
+.form-container{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+    padding: 20px 20px;
+}
+
+.add-location-container{
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.long-lat {
+    display: table-row;
+}
