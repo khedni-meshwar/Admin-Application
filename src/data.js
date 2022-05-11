@@ -9,31 +9,3 @@ export const CardsData =
         png: UilUsersAlt
 
     }
-
-export const barData = [
-    {
-        "country": "AD",
-        "tourist": 127,
-        "local": 171,
-    },
-    {
-        "country": "AE",
-        "tourist": 152,
-        "local": 5,
-    },
-    {
-        "country": "AF",
-        "tourist": 78,
-        "local": 88,
-    },
-    {
-        "country": "AG",
-        "tourist": 189,
-        "local": 79,
-    },
-    {
-        "country": "AI",
-        "tourist": 100,
-        "local": 117,
-    }
-]

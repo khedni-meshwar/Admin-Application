@@ -11,15 +11,33 @@ const MainDash = () => {
     const [users, setUsers] = useState(0);
     const [tourists, setTourists] = useState(0);
     const [locals, setLocals] = useState(0);
+    const [country, setCountryData] = useState([]);
 
     const db = getFirestore(fire);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(async () => {
         const userRef = collection(db, "users", "");
         getDocs(userRef)
             .then((response) => {
+                const countryData = {};
                 setUsers(response.size);
-                console.log("the number of users is " + users);
+                response.forEach((doc) => {
+                    const countryCode = doc.data()['countryCode'];
+                    if (countryData[countryCode] === undefined)
+                        countryData[countryCode] = 1;
+                    else
+                        countryData[countryCode] += 1;
+                });
+                const data = []
+                for (const [ key, value ] of Object.entries(countryData)) {
+                    data.push({
+                        "country": key,
+                        "freq": value
+                    });
+                }
+                setCountryData(data);
+                // console.log("set country data " + data);
             });
         const touristRef = query(userRef, where('type', '==', 'tourist'));
         getDocs(touristRef)
@@ -34,6 +52,7 @@ const MainDash = () => {
                 console.log("the number of locals is " + locals);
                 setIsLoading(false);
             })
+
     }, []);
 
     if (isLoading) {
@@ -47,7 +66,7 @@ const MainDash = () => {
             <div className="main-dash">
                 <h1>Application Analytics</h1>
                 <Cards touristNb={tourists} localNb={locals} userNb={users}/>
-                <Table/>
+                <Table countryData={country}/>
             </div>
 
         );

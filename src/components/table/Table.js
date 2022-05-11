@@ -1,46 +1,22 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import {ResponsiveBar} from '@nivo/bar'
 import "./Table.css";
-import {barData} from "../../data";
-import {collection, getDocs, getFirestore} from "firebase/firestore";
-import fire from "../../firebase-config";
-import {RingLoader} from "react-spinners";
 
-const Table = () => {
+const Table = (props) => {
 
     return (
         <div className="Table">
             <ResponsiveBar
-                data={barData}
+                data={props.countryData}
                 keys={[
-                    'tourist',
-                    'local'
+                    'freq'
                 ]}
                 indexBy="country"
                 margin={{top: 50, right: 130, bottom: 50, left: 60}}
                 padding={0.3}
                 valueScale={{type: 'linear'}}
                 indexScale={{type: 'band', round: true}}
-                colors={{scheme: 'blue_green'}}
-                defs={[
-                    {
-                        id: 'dots',
-                        type: 'patternDots',
-                        background: 'inherit',
-                        color: '#38bcb2',
-                        size: 4,
-                        padding: 1,
-                        stagger: true
-                    }
-                ]}
-                fill={[
-                    {
-                        match: {
-                            id: 'tourist'
-                        },
-                        id: 'dots'
-                    }
-                ]}
+                colors={{scheme: 'set3'}}
                 borderColor={{
                     from: 'color',
                     modifiers: [
