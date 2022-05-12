@@ -17,9 +17,11 @@ function NewLocation() {
     const longitudeInputRef = useRef();
     const latitudeInputRef = useRef();
     const [selectedTags, setSelectedTags] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     const [image, setImg] = useState();
     let [loading, setLoading] = useState(false);
+    const style = {cursor: 'pointer', display: 'flex'};
 
     let progress;
     useEffect(() => {
@@ -36,6 +38,12 @@ function NewLocation() {
         {value: 'architecture', label: 'architecture'},
         {value: 'beach', label: 'beach'},
         {value: 'weekend getaway', label: 'weekend getaway'},
+        {value: 'nightlife', label: 'nightlife'},
+        {value: 'dine-in', label: 'dine-in'},
+        {value: 'rooftop', label: 'rooftop'},
+        {value: 'camping', label: 'camping'},
+        {value: 'dining', label: 'dining'},
+        {value: 'party', label: 'party'},
     ]
     const animatedComponents = makeAnimated();
 
@@ -59,7 +67,7 @@ function NewLocation() {
     }
 
     async function uploadImage(img) {
-
+        setIsLoading(true);
         const storageRef = ref(storage, `/locations/${img.name}`)
         const uploadTask = uploadBytesResumable(storageRef, img);
 
@@ -87,8 +95,10 @@ function NewLocation() {
                     tags: selectedTags
                 }
 
-                await addDoc(collection(db, "locations", ""), locationData)
-
+                await addDoc(collection(db, "locations", ""), locationData).then(() => {
+                        setIsLoading(false);
+                    }
+                )
             }
         );
     }
@@ -126,11 +136,14 @@ function NewLocation() {
                         <div className="control">
                             <label htmlFor="tags">Tags</label>
                             <Select options={tags} closeMenuOnSelect={false}
-                                    components={animatedComponents} isMulti onChange={handleChange}/>
+                                    components={animatedComponents} isMulti onChange={handleChange} style={style}/>
                         </div>
                         <div className="actions">
                             <button>Add Location</button>
                         </div>
+                        {!isLoading && <div className="control">
+                            <p className="done">DONE</p>
+                        </div>}
                     </form>
                 </div>
             </div>

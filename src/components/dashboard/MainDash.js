@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import "./MainDash.css";
 import Cards from "../cards/Cards";
 import Table from "../table/Table";
-import {collection, getDocs, getFirestore, query, where} from "firebase/firestore";
+import {collection, getDocs, getFirestore, query, where, doc} from "firebase/firestore";
 import fire from "../../firebase-config";
 import {RingLoader} from "react-spinners";
 
@@ -37,7 +37,6 @@ const MainDash = () => {
                     });
                 }
                 setCountryData(data);
-                // console.log("set country data " + data);
             });
         const touristRef = query(userRef, where('type', '==', 'tourist'));
         getDocs(touristRef)

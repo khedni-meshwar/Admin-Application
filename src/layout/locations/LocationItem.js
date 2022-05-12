@@ -17,6 +17,7 @@ const LocationItem = (props) => {
                     <p><h4>[{props.address.latitude} {props.address.longitude}]</h4></p>
                     <p>{props.description}</p>
                     <p>{props.tags}</p>
+                    {/*<DeleteIcon />*/}
                 </div>
             </Card>
         </li>

@@ -106,3 +106,8 @@
 .long-lat {
     display: table-row;
 }
+
+.done {
+    margin-top: 5%;
+    color: red;
+}
